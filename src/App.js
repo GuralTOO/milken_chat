@@ -5,7 +5,7 @@ import "./App.css";
 const App = () => {
   const [inputText, setInputText] = useState("");
   const [serverResponse, setServerResponse] = useState("");
-  const socket = useSocket("http://157.230.62.148:5000");
+  const socket = useSocket("https://visionproje.com");
 
   useEffect(() => {
     if (socket) {
