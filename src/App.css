@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background-color: #000;
+  background-color: 'biege';
 }
 
 .content {
@@ -26,7 +26,7 @@
   font-style: italic;
   font-weight: 100;
   padding-top: 100px;
-  color: #fff;
+  color: black;
 }
 
 .input-text {

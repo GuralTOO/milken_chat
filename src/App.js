@@ -1,47 +1,19 @@
 import React, { useEffect, useState } from "react";
-import useSocket from "./useSocket";
+// import useSocket from "./useSocket";
 import "./App.css";
+import Chat from "./Elements/Chat";
+import Header from "./Elements/Header";
 
 const App = () => {
   const [inputText, setInputText] = useState("");
   const [serverResponse, setServerResponse] = useState("");
-  const socket = useSocket("https://visionproje.com");
-
-  useEffect(() => {
-    if (socket) {
-      socket.on("message", (msg) => {
-        console.log("Received message: ", msg);
-        setServerResponse((prev) => prev + msg);
-      });
-    }
-  }, [socket]);
-
-  const sendTextToServer = () => {
-    setServerResponse("");
-    if (socket && socket.connected) {
-      socket.emit("message", inputText);
-    } else {
-      console.error("Socket is not connected");
-    }
-  };
+  // const socket = useSocket("https://visionproje.com");
+  // const socket = useSocket("http://206.189.199.72:8001");
 
   return (
     <div className="App">
-      <h1 className="title">Economic Club Chat</h1>
-      <div className="content">
-        <input
-          className="input-text"
-          onChange={(e) => setInputText(e.target.value)}
-          value={inputText}
-          placeholder="Enter your text here"
-        />
-        <button className="button" onClick={sendTextToServer}>
-          Send
-        </button>
-        <div className="response-container">
-          <p>{serverResponse}</p>
-        </div>
-      </div>
+      <Header />
+      <Chat />
     </div>
   );
 };
