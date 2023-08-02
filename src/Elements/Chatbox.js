@@ -28,7 +28,7 @@ const CustomTextField = styled(TextField)({
 
 const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   // const serverUrl = "http://127.0.0.1:5001";
-  const socket = useSocket("http://206.189.199.72:8001");
+  const socket = useSocket("https://206.189.199.72:8001");
 
   const [message, setMessage] = useState("");
   // const [outputMessage, setOutputMessage] = useState("");
@@ -78,7 +78,7 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
 
     // make api call to get current sources
     const response = await fetch(
-      `http://206.189.199.72:8001/search/${encodeURIComponent(message)}`
+      `https://206.189.199.72:8001/search/${encodeURIComponent(message)}`
     );
 
     const data = await response.json();
