@@ -96,8 +96,8 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
           justifyContent: "center",
         }}
       >
-        The Messaging bot is in beta stage development. Consider reading the
-        sources to confirm the response.{" "}
+        This Chatbot is in beta stage development. Please consider reading the
+        provided sources to confirm the accuracy of the response.{" "}
       </p>
       <form onSubmit={handleSendStream}>
         <Box display="flex" color={"black"}>
