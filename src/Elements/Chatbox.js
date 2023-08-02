@@ -1,10 +1,4 @@
-import {
-  TextField,
-  Button,
-  Box,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
 
@@ -28,7 +22,8 @@ const CustomTextField = styled(TextField)({
 
 const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   // const serverUrl = "http://127.0.0.1:5001";
-  const socket = useSocket("https://206.189.199.72:8001");
+  // const socket = useSocket("https://206.189.199.72:8001");
+  const socket = useSocket("https://visionproje.com");
 
   const [message, setMessage] = useState("");
   // const [outputMessage, setOutputMessage] = useState("");
@@ -78,7 +73,7 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
 
     // make api call to get current sources
     const response = await fetch(
-      `https://206.189.199.72:8001/search/${encodeURIComponent(message)}`
+      `https://visionproje.com/search/${encodeURIComponent(message)}`
     );
 
     const data = await response.json();
