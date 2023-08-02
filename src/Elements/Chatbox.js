@@ -28,7 +28,6 @@ const CustomTextField = styled(TextField)({
 
 const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   // const serverUrl = "http://127.0.0.1:5001";
-  // const socket = useSocket("https://visionproje.com");
   const socket = useSocket("http://206.189.199.72:8001");
 
   const [message, setMessage] = useState("");
