@@ -1,8 +1,6 @@
 import { TextField, Button, Box } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
-
-// import "./Chatbox.css";
 import useSocket from "../useSocket";
 
 // Theme
@@ -23,7 +21,8 @@ const CustomTextField = styled(TextField)({
 const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   // const serverUrl = "http://127.0.0.1:5001";
   // const socket = useSocket("https://206.189.199.72:8001");
-  const socket = useSocket("https://visionproje.com");
+  // const socket = useSocket("https://visionproje.com");
+  const socket = useSocket("http://10.0.0.134:8000");
 
   const [message, setMessage] = useState("");
   // const [outputMessage, setOutputMessage] = useState("");
@@ -73,7 +72,8 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
 
     // make api call to get current sources
     const response = await fetch(
-      `https://visionproje.com/search/${encodeURIComponent(message)}`
+      // `https://visionproje.com/search/${encodeURIComponent(message)}`
+      `http://10.0.0.134:8000/search/${encodeURIComponent(message)}`
     );
 
     const data = await response.json();
@@ -88,17 +88,13 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   };
 
   return (
-    <div style={{ paddingBottom: 50, backgroundColor: "white" }}>
-      <p
-        style={{
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        This Chatbot is in beta stage development. Please consider reading the
-        provided sources to confirm the accuracy of the response.{" "}
-      </p>
+    <div
+      style={{
+        // paddingBottom: "0vh",
+        backgroundColor: "white",
+      }}
+    >
+      {/* center the text */}
       <form onSubmit={handleSendStream}>
         <Box display="flex" color={"black"}>
           <CustomTextField
@@ -118,13 +114,16 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
           <Button
             variant="contained"
             type="submit"
-            style={{ backgroundColor: "#cd0e26" }}
+            style={{ backgroundColor: "#d54407" }}
           >
             Send
           </Button>
         </Box>
       </form>
-      {/* <p>{outputMessage}</p> */}
+      <p style={{ textAlign: "center", margin: "0px", paddingBottom: "1vh" }}>
+        This Chatbot is in beta stage development and has access to a limited
+        amount of information.{" "}
+      </p>
     </div>
   );
 };

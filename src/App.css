@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background-color: 'biege';
+  background-color: 'black';
 }
 
 .content {
@@ -15,6 +15,7 @@
   width: 100%;
   align-items: center;
   margin-top: -160px; /* Adjust as needed */
+  /* background-color: #000; */
 }
 
 /* other styles remain the same */

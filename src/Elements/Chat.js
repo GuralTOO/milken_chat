@@ -9,8 +9,8 @@ const PageLink = ({ link, summary }) => {
       variant="outlined"
       style={{
         marginTop: "10px",
-        backgroundColor: "black",
-        color: "white",
+        backgroundColor: "#f4f4f4",
+        color: "black",
         // borderRadius: "20px",
         marginRight: "10px",
         width: "45%",
@@ -33,7 +33,7 @@ const PageLink = ({ link, summary }) => {
           display="block"
           style={{ marginTop: "10px", position: "absolute", bottom: "10px" }}
         >
-          <LaunchIcon style={{ color: "#cd0e26" }} />
+          <LaunchIcon style={{ color: "#d54407" }} />
         </Link>
       </CardContent>
     </Card>
@@ -64,7 +64,7 @@ const LinkRenderer = ({ links }) => {
           );
         })}
       </div>
-      <Divider style={{ backgroundColor: "#000", margin: "10px 0" }} />{" "}
+      <Divider style={{ backgroundColor: "#f4f4f4", marginTop: "10px" }} />{" "}
     </div>
   ) : null;
 };
@@ -116,7 +116,14 @@ const Chat = () => {
   return (
     <div
       style={{
-        width: `${65}%`,
+        // if the device is mobile, set the width to 100%
+        // if the device is not mobile, set the width to 65% if the device is a monitor, or 85% if the device is a laptop
+        width:
+          window.innerWidth < 600
+            ? "100%"
+            : window.innerWidth < "2000"
+            ? "80%"
+            : "65%",
         display: "flex",
         flex: 1,
         flexDirection: "column",
@@ -139,8 +146,8 @@ const Chat = () => {
               style={{
                 display: "flex",
                 maxWidth: "75%",
-                marginTop: 35,
-                marginBottom: 55,
+                marginTop: "1vh",
+                marginBottom: "2vh",
                 padding: 0,
                 paddingLeft: 20,
                 paddingRight: 20,
@@ -148,8 +155,8 @@ const Chat = () => {
                 alignSelf:
                   message.source === "user" ? "flex-end" : "flex-start",
                 backgroundColor:
-                  message.source === "user" ? "black" : "#c7cacc",
-                color: message.source === "user" ? "white" : "black",
+                  message.source === "user" ? "#2e2e34" : "#0066cc",
+                color: message.source === "user" ? "white" : "#f4f4f4",
                 flexDirection: "column",
               }}
             >
@@ -165,14 +172,14 @@ const Chat = () => {
           style={{
             display: "flex",
             maxWidth: "75%",
-            marginTop: 35,
-            marginBottom: 55,
+            marginTop: "1vh",
+            marginBottom: "2vh",
             padding: 0,
             paddingLeft: 20,
             paddingRight: 20,
             // backgroundColor: "#0066cc", milken blue
-            backgroundColor: "#c7cacc",
-            color: "black",
+            backgroundColor: "#0066cc",
+            color: "#f4f4f4",
             borderRadius: 20,
             flexDirection: "column",
           }}
