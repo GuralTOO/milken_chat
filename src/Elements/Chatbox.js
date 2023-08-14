@@ -21,8 +21,8 @@ const CustomTextField = styled(TextField)({
 const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
   // const serverUrl = "http://127.0.0.1:5001";
   // const socket = useSocket("https://206.189.199.72:8001");
-  // const socket = useSocket("https://visionproje.com");
-  const socket = useSocket("http://10.0.0.134:8000");
+  const socket = useSocket("https://milken.visionproje.com");
+  // const socket = useSocket("http://10.0.0.134:8000");
 
   const [message, setMessage] = useState("");
   // const [outputMessage, setOutputMessage] = useState("");
@@ -72,8 +72,8 @@ const Chatbox = ({ userMessaged, setOutputMessage, setSources }) => {
 
     // make api call to get current sources
     const response = await fetch(
-      // `https://visionproje.com/search/${encodeURIComponent(message)}`
-      `http://10.0.0.134:8000/search/${encodeURIComponent(message)}`
+      `https://milken.visionproje.com/search/${encodeURIComponent(message)}`
+      // `http://10.0.0.134:8000/search/${encodeURIComponent(message)}`
     );
 
     const data = await response.json();
