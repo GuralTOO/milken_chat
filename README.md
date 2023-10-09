@@ -7,8 +7,8 @@ As a recipient of the Milken Scholarship, I wanted to see if this chat tool coul
 
 ### Comments
 
-This website also has a back end written in Python. [another repository](https://github.com/GuralTOO/milken_chat_server)
+This website also has a back end written in Python - [another repository](https://github.com/GuralTOO/milken_chat_server)
 
 #### How
 
-The data was scraped from the Milken Institute Website, cleaned, and stored in a vector database on a server. Now, the website is accessible at [https://milken-institute.gn-works.com/] (https://milken-institute.gn-works.com/)
+The data was scraped from the Milken Institute Website, cleaned, and stored in a vector database on a server. Now, the website is accessible at [https://milken-institute.gn-works.com/](https://milken-institute.gn-works.com/)
